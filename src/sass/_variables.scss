@@ -1,0 +1,21 @@
+$dashboard-grid-breakpoints: (
+    xs:   0,
+	sm:	  478px,
+	md:   648px,
+	lg:   818px,
+	xl:   988px
+);
+
+$fraction-width: 138px;
+$fraction-condensed-width: 64px;
+
+// colors
+$white: #fff;
+$lightGray: #ddd;
+$gray: #808080;
+$red: #fe6768;
+$purple: #7674e1;
+$blue: #3281e8;
+$green: #08baaa;
+$orange: #ffa95f;
+$cyan: #32c7e8;

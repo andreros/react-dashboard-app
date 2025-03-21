@@ -1,0 +1,80 @@
+/**
+ * Items color scheme
+ */
+.itemA,
+.itemB,
+.itemC,
+.itemD,
+.itemE {
+    font-size: 16px;
+    font-weight: 300;
+    color: $white;
+}
+
+.itemA {
+    background-color: $red !important;
+
+    .dashboard-item-content {
+        background-color: $red !important;
+    }
+}
+
+.itemB {
+    background-color: $purple !important;
+
+    .dashboard-item-content {
+        background-color: $purple !important;
+    }
+}
+
+.itemC {
+    background-color: $green !important;
+
+    .dashboard-item-content {
+        background-color: $green !important;
+    }
+}
+
+.itemD {
+    background-color: $blue !important;
+
+    .dashboard-item-content {
+        background-color: $blue !important;
+    }
+}
+
+.itemE {
+    background-color: $orange !important;
+
+    .dashboard-item-content {
+        background-color: $orange !important;
+    }
+}
+
+/**
+ * Drag and drop functionality
+ */
+.draggable {
+    position: absolute !important;
+    cursor: move;
+    z-index: 10;
+    opacity: 0.9;
+    transform: rotate(3deg);
+    color: $white;
+}
+
+.draggable-item-clone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 700;
+    font-size: 48px;
+    border-radius: 10px;
+    text-align: center;
+    overflow-y: hidden;
+
+    &:hover {
+        cursor: move;
+    }
+}

@@ -1,0 +1,73 @@
+.application-dashboard-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 138px;
+    height: 138px;
+    margin:0 16px 16px 0;
+    background: repeating-linear-gradient(
+        45deg,
+        #eeeeee,
+        #eeeeee 10px,
+        #dddddd 10px,
+        #dddddd 20px
+    );
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 48px;
+    text-align: center;
+    color: $white;
+
+    &-left {
+        .dashboard-item-content::before {
+            content: '' !important;
+            display: block;
+            position: absolute;
+            left: -17px;
+            top: 10px;
+            width: 2px;
+            height: calc(100% - 20px);
+            background-color: #2196f3;
+            z-index: 1;
+        }
+    }
+
+    &-right {
+        .dashboard-item-content::after {
+            content: '' !important;
+            display: block;
+            position: absolute;
+            right: -17px;
+            top: 10px;
+            width: 2px;
+            height: calc(100% - 20px);
+            background-color: green;
+            z-index: 1;
+        }
+    }
+
+    &:hover {
+        cursor: move;
+    }
+
+    .dashboard-item-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+    }
+
+    &.draggable {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: space-around;
+        font-weight: 700;
+        font-size: 48px;
+        border-radius: 8px;
+        color: $white;
+    }
+}
+

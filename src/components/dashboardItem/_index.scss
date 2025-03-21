@@ -1,0 +1,168 @@
+@import 'mixins';
+
+.dashboard {
+    .dashboard-item {
+        min-height: $fraction-width;
+        height: 100%;
+        order: 9999999;
+        border-radius: 8px;
+        background: repeating-linear-gradient(
+            45deg,
+            #eeeeee,
+            #eeeeee 10px,
+            #dddddd 10px,
+            #dddddd 20px
+        );
+
+        @include dashboard-item-grid-breakpoints;
+
+        &-left {
+            .dashboard-item-content::before {
+                content: '' !important;
+                display: block;
+                position: absolute;
+                left: -17px;
+                top: 10px;
+                width: 2px;
+                height: calc(100% - 20px);
+                background-color: #2196f3;
+                z-index: 1;
+            }
+        }
+
+        &-right {
+            .dashboard-item-content::after {
+                content: '' !important;
+                display: block;
+                position: absolute;
+                right: -17px;
+                top: 10px;
+                width: 2px;
+                height: calc(100% - 20px);
+                background-color: green;
+                z-index: 1;
+            }
+        }
+
+        &:hover {
+            cursor: move;
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            font-weight: 700;
+            font-size: 24px;
+            border-radius: 8px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: width .333s ease-in-out,
+            height .333s ease-in-out,
+            left .333s ease-in-out,
+            top .333s ease-in-out;
+            color: white;
+
+            &::before {
+                content: '2 fractions width';
+                font-size: 16px;
+                font-weight: 300;
+            }
+
+            &::after {
+                content: '1 fraction height';
+                font-size: 16px;
+                font-weight: 300;
+            }
+        }
+
+        &.itemA {
+            grid-row: span 2;
+            height: (138px * 2) + 32px;
+
+            .dashboard-item-content::after { 
+                content: '2 fractions height'; 
+            }
+        }
+
+        &.itemB {
+            grid-row: span 4;
+            min-height: ((138px * 4) + (3 * 32px));
+            
+            .dashboard-item-content::after { 
+                content: '4 fractions height'; 
+            }
+        }
+
+        &.itemC {
+            grid-row: span 2;
+            min-height: ((138px * 2) + 32px);
+
+            .dashboard-item-content::after { 
+                content: '2 fractions height'; 
+            }
+        }
+
+        &.itemD {
+            grid-row: span 4;
+            min-height: ((138px * 4) + (3 * 32px));
+
+            .dashboard-item-content::after { 
+                content: '4 fractions height'; 
+            }
+        }
+
+        &.itemE {
+            grid-row: span 2;
+            min-height: ((138px * 2) + 32px);
+
+            .dashboard-item-content::after { 
+                content: '2 fractions height'; 
+            }
+        }
+    }
+
+    &--condensed {
+        .dashboard-ie-fallback {
+            .dashboard-item {
+                min-height: $fraction-condensed-width;
+                height: $fraction-condensed-width;
+                margin: 0 8px;
+
+                @include dashboard-item-grid-breakpoints(true);
+            }
+        }
+
+        .dashboard-item {
+            &.itemA,
+            &.itemB,
+            &.itemC,
+            &.itemD,
+            &.itemE {
+                min-height: auto;
+                height: $fraction-condensed-width;
+            }
+        }
+    }
+
+    &--expanded {
+        .dashboard-item {
+            &.itemA {
+                grid-row: span 2;
+                min-height: ((138px * 2) + 32px);
+            }
+
+            &.itemB {
+                grid-row: span 2;
+                min-height: ((138px * 2) + 32px);
+            }
+
+            &.itemD {
+                grid-row: span 2;
+                min-height: ((138px * 2) + 32px);
+            }
+        }
+    }
+}

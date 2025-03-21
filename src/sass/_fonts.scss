@@ -1,0 +1,21 @@
+@font-face {
+    font-display: fallback;
+    font-family: "Museo Sans";
+    font-style: normal;
+    font-weight: 16px;
+    src: url("../assets/fonts/museo-sans-700-webfont.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: fallback;
+    font-family: "Museo Sans";
+    font-style: normal;
+    font-weight: 16px;
+    src: url("../assets/fonts/museo-sans-300-webfont.woff2") format("woff2");
+}
+
+* {
+    font-family: "Museo Sans";
+    margin: 0;
+    box-sizing: border-box;
+}

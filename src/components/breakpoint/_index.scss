@@ -1,0 +1,25 @@
+#break-point{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999999;
+
+    &::after {
+        content: "XS";
+        @each $bp-value, $breakpoint in $dashboard-grid-breakpoints { //loop xs, sm, md, lg, xl
+            @media (min-width: $breakpoint) {
+                @if ($bp-value == 'xs' ) {
+                    content: "XS";
+                } @else if ($bp-value == 'sm') {
+                    content: "SM";
+                } @else if ($bp-value == 'md') {
+                    content: "MD";
+                } @else if ($bp-value == 'lg') {
+                    content: "LG";
+                } @else if ($bp-value == 'xl') {
+                    content: "XL";
+                }
+            }
+        }
+    }
+}

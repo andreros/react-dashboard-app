@@ -1,0 +1,73 @@
+$dashboard-background-color: #eee;
+
+.dashboard {
+    position: relative;
+    min-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    transition: height .333s;
+    background-color: $dashboard-background-color;
+    padding: 32px;
+
+    &-ie-fallback {
+        display: grid;
+        grid-gap: 32px;
+        grid-template-columns: repeat(auto-fit, minmax($fraction-width, 1fr));
+        grid-template-rows: repeat(auto-fit, $fraction-width);
+        grid-auto-flow: row dense;
+        width: 100%;
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex: auto;
+        }
+    }
+
+	&--condensed {
+		// dashboard footer condensed modifier
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 96px;
+        background-color: $dashboard-background-color;
+        overflow: hidden;
+        padding: 16px;
+        
+        .dashboard-ie-fallback {
+            display: flex;
+            min-height: $fraction-condensed-width;
+            height: $fraction-condensed-width;
+            margin: 0 -8px;
+        }
+
+    }
+
+	&--expanded {
+		// dashboard footer half screen modifier
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 372px;
+
+        .dashboard-ie-fallback {
+            height: 100%;
+            grid-auto-flow: column dense;
+            grid-template-columns: repeat(auto-fit, 138px);
+            grid-template-rows: 138px 138px;
+        }
+	}
+
+	&--full-screen {
+		// dashboard footer full screen modifier
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        overflow: scroll;
+	}
+}

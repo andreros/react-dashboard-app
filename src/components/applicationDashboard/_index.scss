@@ -1,0 +1,21 @@
+.application-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+
+    &-ie-fallback {
+        display: grid;
+        grid-gap: 32px;
+        grid-template-columns: repeat(auto-fit, $fraction-width);
+        grid-template-rows: repeat(auto-fit, $fraction-width);
+        grid-auto-flow: row dense;
+        width: 100%;
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex: auto;
+        }
+    }
+
+}

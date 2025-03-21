@@ -1,0 +1,29 @@
+.mode-selector {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: $lightGray;
+    border-radius: 5px;
+    padding: 16px 24px;
+    z-index: 9999;
+
+    &__title {
+        display: inline;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    &__option {
+        display: inline;
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        label {
+            margin-left: 8px;
+            cursor: pointer;
+        }
+    }
+}

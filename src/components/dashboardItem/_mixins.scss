@@ -1,0 +1,149 @@
+
+@mixin dashboard-item-grid-breakpoints($condensed:false) {
+    @if($condensed) {
+        min-width: calc((64px * 2) + 16px);
+
+        @each $bp-value, $breakpoint in $dashboard-grid-breakpoints { //loop xs, sm, md, lg, xl
+            @media (min-width: $breakpoint) {
+                @for $i from 2 through 6 {
+                    &.dashboard-item-#{$bp-value}-#{$i} { //.ncpp-col-(xs,...)-(1,...)
+                        @if($bp-value == 'xs' ){
+                            @if ($i > 2) {
+                                min-width: calc((64px * 2) + (#{$i - 1} * 16px));
+                                .dashboard-item-content::before { content: '2 fractions width'; }
+                            } @else {
+                                min-width: calc((64px * #{$i}) + (#{$i - 1} * 16px));
+                                .dashboard-item-content::before { content: '#{$i} fractions width'; }
+                            }
+                        }@else if ($bp-value == 'sm') {
+                            @if ($i > 3) {
+                                min-width: calc((64px * 3) + (#{$i - 1} * 16px));
+                                .dashboard-item-content::before { content: '3 fractions width'; }
+                            } @else {
+                                min-width: calc((64px * #{$i}) + (#{$i - 1} * 16px));
+                                .dashboard-item-content::before { content: '#{$i} fractions width'; }
+                            }
+                        }@else if ($bp-value == 'md') {
+                            @if ($i > 4) {
+                                min-width: calc((64px * 4) + (#{$i - 1} * 16px));
+                                .dashboard-item-content::before { content: '4 fractions width'; }
+                            } @else {
+                                min-width: calc((64px * #{$i}) + (#{$i - 1} * 16px));
+                                .dashboard-item-content::before { content: '#{$i} fractions width'; }
+                            }
+                        }@else if ($bp-value == 'lg') {
+                            @if ($i > 5) {
+                                min-width: calc((64px * 5) + (#{$i - 1} * 16px));
+                                .dashboard-item-content::before { content: '5 fractions width'; }
+                            } @else {
+                                min-width: calc((64px * #{$i}) + (#{$i - 1} * 16px));
+                                .dashboard-item-content::before { content: '#{$i} fractions width'; }
+                            }
+                        }@else if ($bp-value == 'xl') {
+                            @if ($i > 6) {
+                                min-width: calc((64px * 6) + (#{$i - 1} * 16px));
+                                .dashboard-item-content::before { content: '6 fractions width'; }
+                            } @else {
+                                min-width: calc((64px * #{$i}) + (#{$i - 1} * 16px));
+                                .dashboard-item-content::before { content: '#{$i} fractions width'; }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }@else{
+        grid-column: span 2;
+        min-width: calc((138px * 2) + 32px);
+        height: 138px;
+        @each $bp-value, $breakpoint in $dashboard-grid-breakpoints { //loop xs, sm, md, lg, xl
+            @media (min-width: $breakpoint) {
+                @for $i from 2 through 6 {
+                    &.dashboard-item-#{$bp-value}-#{$i} { //.ncpp-col-(xs,...)-(1,...)
+                        @if($bp-value == 'xs' ){
+                            @if ($i > 2) {
+                                grid-column: span 2;
+                                min-width: calc((138px * 2) + (#{$i - 1} * 32px));
+                                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                                    min-width: calc((138px * 2) + (#{$i - 1} * 32px));
+                                }
+                                .dashboard-item-content::before { content: '2 fractions width'; }
+                            } @else {
+                                grid-column: span #{$i};
+                                min-width: calc((138px * #{$i}) + (#{$i - 1} * 32px));
+                                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                                    min-width: calc((138px * #{$i}) + (#{$i - 1} * 32px));
+                                }
+                                .dashboard-item-content::before { content: '#{$i} fractions width'; }
+                            }
+                        }@else if ($bp-value == 'sm') {
+                            @if ($i > 3) {
+                                grid-column: span 3;
+                                min-width: calc((138px * 3) + (#{$i - 1} * 32px));
+                                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                                    min-width: calc((138px * 3) + (#{$i - 1} * 32px));
+                                }
+                                .dashboard-item-content::before { content: '3 fractions width'; }
+                            } @else {
+                                grid-column: span #{$i};
+                                min-width: calc((138px * #{$i}) + (#{$i - 1} * 32px));
+                                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                                    min-width: calc((138px * #{$i}) + (#{$i - 1} * 32px));
+                                }
+                                .dashboard-item-content::before { content: '#{$i} fractions width'; }
+                            }
+                        }@else if ($bp-value == 'md') {
+                            @if ($i > 4) {
+                                grid-column: span 4;
+                                min-width: calc((138px * 4) + (#{$i - 1} * 32px));
+                                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                                    min-width: calc((138px * 4) + (#{$i - 1} * 32px));
+                                }
+                                .dashboard-item-content::before { content: '4 fractions width'; }
+                            } @else {
+                                grid-column: span #{$i};
+                                min-width: calc((138px * #{$i}) + (#{$i - 1} * 32px));
+                                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                                    min-width: calc((138px * #{$i}) + (#{$i - 1} * 32px));
+                                }
+                                .dashboard-item-content::before { content: '#{$i} fractions width'; }
+                            }
+                        }@else if ($bp-value == 'lg') {
+                            @if ($i > 5) {
+                                grid-column: span 5;
+                                min-width: calc((138px * 5) + (#{$i - 1} * 32px));
+                                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                                    min-width: calc((138px * 5) + (#{$i - 1} * 32px));
+                                }
+                                .dashboard-item-content::before { content: '5 fractions width'; }
+                            } @else {
+                                grid-column: span #{$i};
+                                min-width: calc((138px * #{$i}) + (#{$i - 1} * 32px));
+                                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                                    min-width: calc((138px * #{$i}) + (#{$i - 1} * 32px));
+                                }
+                                .dashboard-item-content::before { content: '#{$i} fractions width'; }
+                            }
+                        }@else if ($bp-value == 'xl') {
+                            @if ($i > 6) {
+                                grid-column: span 6;
+                                min-width: calc((138px * 6) + (#{$i - 1} * 32px));
+                                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                                    min-width: calc((138px * 6) + (#{$i - 1} * 32px));
+                                }
+                                .dashboard-item-content::before { content: '6 fractions width'; }
+                            } @else {
+                                grid-column: span #{$i};
+                                min-width: calc((138px * #{$i}) + (#{$i - 1} * 32px));
+                                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                                    min-width: calc((138px * #{$i}) + (#{$i - 1} * 32px));
+                                }
+                                .dashboard-item-content::before { content: '#{$i} fractions width'; }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

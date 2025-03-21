@@ -1,0 +1,47 @@
+.swapper {
+    margin: 24px auto;
+    display: block;
+    //display: none;
+    background-color: $lightGray;
+    border-radius: 5px;
+    padding: 16px 24px;
+    width: 200px;
+    font-size: 16px;
+
+    &__input-control {
+        input {
+            display: block;
+            padding: 0;
+            margin-bottom: 16px;
+            height: 24px;
+            width: 100%;
+            border-radius: 4px;
+            border: solid $gray 1px;
+        }
+
+        label {
+            display: inline;
+        }
+    }
+
+    &__placement {
+        height: 24px;
+        line-height: 24px;
+        clear: both;
+
+        input {
+            width: 32px;
+            height: 24px;
+            float: left;
+            margin: 0;
+        }
+
+        label {
+            display: block;
+            height: 24px;
+            line-height: 24px;
+            float: left;
+            cursor: pointer;
+        }
+    }
+}
