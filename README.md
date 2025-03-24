@@ -13,11 +13,36 @@ Project implementing all the necessary proofs of concept for the new Morpheus Da
   - **Expanded**: Fixed to the bottom of the browser window, with 4 widget fractions height. Widgets heights must be 2 fractions maximum. Widgets must be responsive and respond to the minimum height, adjusting their sizes and display accordingly. If the existing widgets inside the container consume more than the available space, the remaining widgets must be placed to the right and an horizontal scroll must occur.
   - **Full Screen**: Covers the entire browser window. If the existing widgets inside the container consume more than the available space, the remaining widgets must be placed below the existing ones and a vertical scroll must occur.
 - The Dashboard **grid must be responsive**, as well as the widgets inside it.
-- The Dashboard must **allow adding new widgets by dragging and dropping** them into a magnetic field **or by clicking an "Add to Dashboard" button in the widget** (from quick view).
-- The Dashboard must **allow removing existing widgets by dragging and dropping** them into a widget removal drop zone **or by clicking a remove button** in the widget.
 - The Dashboard grid must **allow widget reordering**, either by dragging and dropping or by manually defining the widget positions.
 - The widget reordering and consequent **repositioning movement must be animated**.
+
+Further requirements, not implemented yet:
+- The Dashboard must **allow adding new widgets by dragging and dropping** them into a magnetic field **or by clicking an "Add to Dashboard" button in the widget** (from quick view).
+- The Dashboard must **allow removing existing widgets by dragging and dropping** them into a widget removal drop zone **or by clicking a remove button** in the widget.
 - **Widgets can be redimensioned**, either by adjusting the number of columns they occupy in the grid (+N columns) or rows (+M rows).
+
+The following examples illustrate the grid layout:
+
+<br>
+
+#### Grid Layout - Example 1
+<div style="text-align: center;">
+    <img src="src/assets/images/grid-layout-1.png" width="600px">
+</div>
+
+<br>
+
+#### Grid Layout - Example 2
+<div style="text-align: center;">
+    <img src="src/assets/images/grid-layout-2.png" width="800px">
+</div>
+
+<br>
+
+#### Grid Layout - Example 3
+<div style="text-align: center;">
+    <img src="src/assets/images/grid-layout-3.png" width="1000px">
+</div>
 
 <br>
 
