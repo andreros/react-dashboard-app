@@ -1,6 +1,6 @@
 # Dashboard
 
-Project implementing all the necessary proofs of concept for the new Morpheus Dashboard.
+Project implementing all the necessary proofs of concept for an application platform Dashboard.
 
 <br>
 
